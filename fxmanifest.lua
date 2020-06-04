@@ -15,6 +15,7 @@ client_scripts {
 	'locales/sv.lua',
 	'locales/pl.lua',
 	'locales/nl.lua',
+	'locales/tr.lua',
 	'config.lua',
 	'client/main.lua'
 }
@@ -28,6 +29,7 @@ server_scripts {
 	'locales/sv.lua',
 	'locales/pl.lua',
 	'locales/nl.lua',
+	'locales/tr.lua',
 	'config.lua',
 	'server/main.lua'
 }

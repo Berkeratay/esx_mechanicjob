@@ -72,8 +72,8 @@ function OpenMechanicActionsMenu()
 		{label = _U('vehicle_list'),   value = 'vehicle_list'},
 		{label = _U('work_wear'),      value = 'cloakroom'},
 		{label = _U('civ_wear'),       value = 'cloakroom2'},
-		{label = _U('deposit_stock'),  value = 'put_stock'},
-		{label = _U('withdraw_stock'), value = 'get_stock'}
+		--[[{label = _U('deposit_stock'),  value = 'put_stock'},
+		{label = _U('withdraw_stock'), value = 'get_stock'}]]--
 	}
 
 	if Config.EnablePlayerManagement and ESX.PlayerData.job and ESX.PlayerData.job.grade_name == 'boss' then
@@ -177,10 +177,10 @@ function OpenMechanicActionsMenu()
 			ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
 				TriggerEvent('skinchanger:loadSkin', skin)
 			end)
-		elseif data.current.value == 'put_stock' then
+		--[[elseif data.current.value == 'put_stock' then
 			OpenPutStocksMenu()
 		elseif data.current.value == 'get_stock' then
-			OpenGetStocksMenu()
+			OpenGetStocksMenu()]]--
 		elseif data.current.value == 'boss_actions' then
 			TriggerEvent('esx_society:openBossMenu', 'mechanic', function(data, menu)
 				menu.close()
@@ -195,7 +195,7 @@ function OpenMechanicActionsMenu()
 	end)
 end
 
-function OpenMechanicHarvestMenu()
+--[[function OpenMechanicHarvestMenu()
 	if Config.EnablePlayerManagement and ESX.PlayerData.job and ESX.PlayerData.job.grade_name ~= 'recrue' then
 		local elements = {
 			{label = _U('gas_can'), value = 'gaz_bottle'},
@@ -228,9 +228,9 @@ function OpenMechanicHarvestMenu()
 	else
 		ESX.ShowNotification(_U('not_experienced_enough'))
 	end
-end
+end]]--
 
-function OpenMechanicCraftMenu()
+--[[function OpenMechanicCraftMenu()
 	if Config.EnablePlayerManagement and ESX.PlayerData.job and ESX.PlayerData.job.grade_name ~= 'recrue' then
 		local elements = {
 			{label = _U('blowtorch'),  value = 'blow_pipe'},
@@ -264,7 +264,7 @@ function OpenMechanicCraftMenu()
 	else
 		ESX.ShowNotification(_U('not_experienced_enough'))
 	end
-end
+end]]--
 
 function OpenMobileMechanicActionsMenu()
 	ESX.UI.Menu.CloseAll()
@@ -277,9 +277,9 @@ function OpenMobileMechanicActionsMenu()
 			{label = _U('hijack'),        value = 'hijack_vehicle'},
 			{label = _U('repair'),        value = 'fix_vehicle'},
 			{label = _U('clean'),         value = 'clean_vehicle'},
-			{label = _U('imp_veh'),       value = 'del_vehicle'},
+			--[[{label = _U('imp_veh'),       value = 'del_vehicle'},]]--
 			{label = _U('flat_bed'),      value = 'dep_vehicle'},
-			{label = _U('place_objects'), value = 'object_spawner'}
+			--[[{label = _U('place_objects'), value = 'object_spawner'}]]--
 	}}, function(data, menu)
 		if isBusy then return end
 
@@ -509,7 +509,7 @@ function OpenMobileMechanicActionsMenu()
 	end)
 end
 
-function OpenGetStocksMenu()
+--[[function OpenGetStocksMenu()
 	ESX.TriggerServerCallback('esx_mechanicjob:getStockItems', function(items)
 		local elements = {}
 
@@ -596,7 +596,7 @@ function OpenPutStocksMenu()
 			menu.close()
 		end)
 	end)
-end
+end]]--
 
 RegisterNetEvent('esx_mechanicjob:onHijack')
 AddEventHandler('esx_mechanicjob:onHijack', function()
@@ -816,7 +816,7 @@ Citizen.CreateThread(function()
 
 	SetBlipSprite (blip, 446)
 	SetBlipDisplay(blip, 4)
-	SetBlipScale  (blip, 1.8)
+	SetBlipScale  (blip, 1.3)
 	SetBlipColour (blip, 5)
 	SetBlipAsShortRange(blip, true)
 
